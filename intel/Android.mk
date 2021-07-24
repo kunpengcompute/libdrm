@@ -27,12 +27,12 @@ include $(CLEAR_VARS)
 # Import variables LIBDRM_INTEL_FILES, LIBDRM_INTEL_H_FILES
 include $(LOCAL_PATH)/Makefile.sources
 
-LOCAL_MODULE := libdrm_intel
+LOCAL_MODULE := libvmidrm_intel
 
 LOCAL_SRC_FILES := $(LIBDRM_INTEL_FILES)
 
 LOCAL_SHARED_LIBRARIES := \
-	libdrm
+	libvmidrm
 
 include $(LIBDRM_COMMON_MK)
 include $(BUILD_SHARED_LIBRARY)

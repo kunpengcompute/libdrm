@@ -47,7 +47,7 @@ pkgconfigdir = @pkgconfigdir@
 pkgconfig_DATA = libdrm.pc
 
 if HAVE_LIBKMS
-LIBKMS_SUBDIR = libkms
+LIBKMS_SUBDIR = libvmikms
 endif
 
 if HAVE_INTEL

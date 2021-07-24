@@ -6,7 +6,7 @@ LOCAL_VENDOR_MODULE := true
 
 LOCAL_SRC_FILES := omap_drm.c
 
-LOCAL_SHARED_LIBRARIES := libdrm
+LOCAL_SHARED_LIBRARIES := libvmidrm
 
 include $(LIBDRM_COMMON_MK)
 

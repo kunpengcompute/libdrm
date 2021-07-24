@@ -3,7 +3,7 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libkms
+Name: libvmikms
 Description: Library that abstracts away the different mm interface for kernel drivers
 Version: 1.0.0
 Libs: -L${libdir} -lkms

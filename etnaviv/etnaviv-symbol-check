@@ -5,7 +5,7 @@ set -u
 # The following symbols (past the first five) are taken from the public headers.
 # A list of the latter should be available Makefile.sources/LIBDRM_ETNAVIV_H_FILES
 
-FUNCS=$(nm -D --format=bsd --defined-only ${1-.libs/libdrm_etnaviv.so} | awk '{print $3}'| while read func; do
+FUNCS=$(nm -D --format=bsd --defined-only ${1-.libs/libvmidrm_etnaviv.so} | awk '{print $3}'| while read func; do
 ( grep -q "^$func$" || echo $func )  <<EOF
 __bss_start
 _edata

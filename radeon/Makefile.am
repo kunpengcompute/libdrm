@@ -31,7 +31,7 @@ AM_CFLAGS = \
 	$(PTHREADSTUBS_CFLAGS) \
 	-I$(top_srcdir)/include/drm
 
-libdrm_radeon_la_LTLIBRARIES = libdrm_radeon.la
+libdrm_radeon_la_LTLIBRARIES = libvmidrm_radeon.la
 libdrm_radeon_ladir = $(libdir)
 libdrm_radeon_la_LDFLAGS = -version-number 1:0:1 -no-undefined
 libdrm_radeon_la_LIBADD = ../libdrm.la @PTHREADSTUBS_LIBS@
@@ -42,7 +42,7 @@ libdrm_radeonincludedir = ${includedir}/libdrm
 libdrm_radeoninclude_HEADERS = $(LIBDRM_RADEON_H_FILES)
 
 pkgconfigdir = @pkgconfigdir@
-pkgconfig_DATA = libdrm_radeon.pc
+pkgconfig_DATA = libvmidrm_radeon.pc
 
 AM_TESTS_ENVIRONMENT = NM='$(NM)'
 TESTS = radeon-symbol-check
