@@ -3,7 +3,7 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libdrm_etnaviv
+Name: libvmidrm_etnaviv
 Description: Userspace interface to etnaviv kernel DRM services
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -ldrm_etnaviv

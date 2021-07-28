@@ -8,7 +8,7 @@ AM_CFLAGS = \
 	-I$(top_srcdir)/include/drm \
 	-DDEBUG
 
-libdrm_nouveau_la_LTLIBRARIES = libdrm_nouveau.la
+libdrm_nouveau_la_LTLIBRARIES = libvmidrm_nouveau.la
 libdrm_nouveau_ladir = $(libdir)
 libdrm_nouveau_la_LDFLAGS = -version-number 2:0:0 -no-undefined
 libdrm_nouveau_la_LIBADD = ../libdrm.la @PTHREADSTUBS_LIBS@
@@ -28,7 +28,7 @@ libdrm_nouveaunvifinclude_HEADERS = nvif/class.h \
 				    nvif/unpack.h
 
 pkgconfigdir = @pkgconfigdir@
-pkgconfig_DATA = libdrm_nouveau.pc
+pkgconfig_DATA = libvmidrm_nouveau.pc
 
 AM_TESTS_ENVIRONMENT = NM='$(NM)'
 TESTS = nouveau-symbol-check

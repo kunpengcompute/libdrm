@@ -3,7 +3,7 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libdrm_amdgpu
+Name: libvmidrm_amdgpu
 Description: Userspace interface to kernel DRM services for amdgpu
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -ldrm_amdgpu

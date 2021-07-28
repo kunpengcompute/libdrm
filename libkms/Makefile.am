@@ -6,7 +6,7 @@ AM_CFLAGS = \
 	-I$(top_srcdir)/include/drm \
 	-I$(top_srcdir)
 
-libkms_la_LTLIBRARIES = libkms.la
+libkms_la_LTLIBRARIES = libvmikms.la
 libkms_ladir = $(libdir)
 libkms_la_LDFLAGS = -version-number 1:0:0 -no-undefined
 libkms_la_LIBADD = ../libdrm.la
@@ -38,7 +38,7 @@ libkmsincludedir = ${includedir}/libkms
 libkmsinclude_HEADERS = $(LIBKMS_H_FILES)
 
 pkgconfigdir = @pkgconfigdir@
-pkgconfig_DATA = libkms.pc
+pkgconfig_DATA = libvmikms.pc
 
 AM_TESTS_ENVIRONMENT = NM='$(NM)'
 TESTS = kms-symbol-check

@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 
-libdrm_nouveau = shared_library(
+libvmidrm_nouveau = shared_library(
   'drm_nouveau',
   [files( 'nouveau.c', 'pushbuf.c', 'bufctx.c', 'abi16.c'), config_file],
   c_args : libdrm_c_args,
@@ -31,7 +31,7 @@ libdrm_nouveau = shared_library(
 )
 
 ext_libdrm_nouveau = declare_dependency(
-  link_with : [libdrm, libdrm_nouveau],
+  link_with : [libvmidrm, libvmidrm_nouveau],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -43,8 +43,8 @@ install_headers(
 )
 
 pkg.generate(
-  name : 'libdrm_nouveau',
-  libraries : libdrm_nouveau,
+  name : 'libvmidrm_nouveau',
+  libraries : libvmidrm_nouveau,
   subdirs : ['.', 'libdrm', 'libdrm/nouveau'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -55,5 +55,5 @@ test(
   'nouveau-symbol-check',
   find_program('nouveau-symbol-check'),
   env : env_test,
-  args : libdrm_nouveau,
+  args : libvmidrm_nouveau,
 )

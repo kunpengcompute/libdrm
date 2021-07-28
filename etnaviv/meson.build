@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 
-libdrm_etnaviv = shared_library(
+libvmidrm_etnaviv = shared_library(
   'drm_etnaviv',
   [
     files(
@@ -39,8 +39,8 @@ libdrm_etnaviv = shared_library(
 install_headers('etnaviv_drmif.h', subdir : 'libdrm')
 
 pkg.generate(
-  name : 'libdrm_etnaviv',
-  libraries : libdrm_etnaviv,
+  name : 'libvmidrm_etnaviv',
+  libraries : libvmidrm_etnaviv,
   subdirs : ['.', 'libdrm'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -48,7 +48,7 @@ pkg.generate(
 )
 
 ext_libdrm_etnaviv = declare_dependency(
-  link_with : [libdrm, libdrm_etnaviv],
+  link_with : [libvmidrm, libvmidrm_etnaviv],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -56,5 +56,5 @@ test(
   'etnaviv-symbol-check',
   find_program('etnaviv-symbol-check'),
   env : env_test,
-  args : libdrm_etnaviv,
+  args : libvmidrm_etnaviv,
 )

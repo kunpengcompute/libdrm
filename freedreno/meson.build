@@ -39,7 +39,7 @@ if with_freedreno_kgsl
   )
 endif
 
-libdrm_freedreno = shared_library(
+libvmidrm_freedreno = shared_library(
   'drm_freedreno',
   [files_freedreno, config_file],
   c_args : libdrm_c_args,
@@ -51,7 +51,7 @@ libdrm_freedreno = shared_library(
 )
 
 ext_libdrm_freedreno = declare_dependency(
-  link_with : [libdrm, libdrm_freedreno],
+  link_with : [libvmidrm, libvmidrm_freedreno],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -61,8 +61,8 @@ install_headers(
 )
 
 pkg.generate(
-  name : 'libdrm_freedreno',
-  libraries : libdrm_freedreno,
+  name : 'libvmidrm_freedreno',
+  libraries : libvmidrm_freedreno,
   subdirs : ['.', 'libdrm', 'freedreno'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -73,5 +73,5 @@ test(
   'freedreno-symbol-check',
   find_program('freedreno-symbol-check'),
   env : env_test,
-  args : libdrm_freedreno,
+  args : libvmidrm_freedreno,
 )

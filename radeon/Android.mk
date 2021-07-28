@@ -4,9 +4,9 @@ include $(CLEAR_VARS)
 # Import variables LIBDRM_RADEON_FILES, LIBDRM_RADEON_H_FILES
 include $(LOCAL_PATH)/Makefile.sources
 
-LOCAL_MODULE := libdrm_radeon
+LOCAL_MODULE := libvmidrm_radeon
 
-LOCAL_SHARED_LIBRARIES := libdrm
+LOCAL_SHARED_LIBRARIES := libvmidrm
 
 LOCAL_SRC_FILES := $(LIBDRM_RADEON_FILES)
 

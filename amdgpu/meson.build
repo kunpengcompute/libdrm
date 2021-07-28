@@ -21,7 +21,7 @@
 
 datadir_amdgpu = join_paths(get_option('prefix'), get_option('datadir'), 'libdrm')
 
-libdrm_amdgpu = shared_library(
+libvmidrm_amdgpu = shared_library(
   'drm_amdgpu',
   [
     files(
@@ -44,8 +44,8 @@ libdrm_amdgpu = shared_library(
 install_headers('amdgpu.h', subdir : 'libdrm')
 
 pkg.generate(
-  name : 'libdrm_amdgpu',
-  libraries : libdrm_amdgpu,
+  name : 'libvmidrm_amdgpu',
+  libraries : libvmidrm_amdgpu,
   subdirs : ['.', 'libdrm'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -53,7 +53,7 @@ pkg.generate(
 )
 
 ext_libdrm_amdgpu = declare_dependency(
-  link_with : [libdrm, libdrm_amdgpu],
+  link_with : [libvmidrm, libvmidrm_amdgpu],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -61,5 +61,5 @@ test(
   'amdgpu-symbol-check',
   find_program('amdgpu-symbol-check'),
   env : env_test,
-  args : libdrm_amdgpu,
+  args : libvmidrm_amdgpu,
 )
