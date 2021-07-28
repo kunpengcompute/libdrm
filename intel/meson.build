@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-libdrm_intel = shared_library(
+libvmidrm_intel = shared_library(
   'drm_intel',
   [
     files(
@@ -36,7 +36,7 @@ libdrm_intel = shared_library(
 )
 
 ext_libdrm_intel = declare_dependency(
-  link_with : [libdrm, libdrm_intel],
+  link_with : [libvmidrm, libvmidrm_intel],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -46,8 +46,8 @@ install_headers(
 )
 
 pkg.generate(
-  name : 'libdrm_intel',
-  libraries : libdrm_intel,
+  name : 'libvmidrm_intel',
+  libraries : libvmidrm_intel,
   subdirs : ['.', 'libdrm'],
   version : meson.project_version(),
   requires : 'libdrm',
@@ -58,7 +58,7 @@ test_decode = executable(
   'test_decode',
   files('test_decode.c'),
   include_directories : [inc_root, inc_drm],
-  link_with : [libdrm, libdrm_intel],
+  link_with : [libvmidrm, libvmidrm_intel],
   c_args : libdrm_c_args,
 )
 
@@ -96,5 +96,5 @@ test(
   'intel-symbol-check',
   find_program('intel-symbol-check'),
   env : env_test,
-  args : libdrm_intel,
+  args : libvmidrm_intel,
 )

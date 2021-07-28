@@ -3,7 +3,7 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libdrm_freedreno
+Name: libvmidrm_freedreno
 Description: Userspace interface to freedreno kernel DRM services
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -ldrm_freedreno

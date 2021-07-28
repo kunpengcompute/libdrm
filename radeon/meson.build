@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 
-libdrm_radeon = shared_library(
+libvmidrm_radeon = shared_library(
   'drm_radeon',
   [
     files(
@@ -37,7 +37,7 @@ libdrm_radeon = shared_library(
 )
 
 ext_libdrm_radeon = declare_dependency(
-  link_with : [libdrm, libdrm_radeon],
+  link_with : [libvmidrm, libvmidrm_radeon],
   include_directories : [inc_drm, include_directories('.')],
 )
 
@@ -48,8 +48,8 @@ install_headers(
 )
 
 pkg.generate(
-  name : 'libdrm_radeon',
-  libraries : libdrm_radeon,
+  name : 'libvmidrm_radeon',
+  libraries : libvmidrm_radeon,
   subdirs : ['.', 'libdrm'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -60,5 +60,5 @@ test(
   'radeon-symbol-check',
   find_program('radeon-symbol-check'),
   env : env_test,
-  args : libdrm_radeon,
+  args : libvmidrm_radeon,
 )

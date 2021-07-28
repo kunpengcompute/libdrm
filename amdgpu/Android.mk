@@ -4,9 +4,9 @@ include $(CLEAR_VARS)
 # Import variables LIBDRM_AMDGPU_FILES, LIBDRM_AMDGPU_H_FILES
 include $(LOCAL_PATH)/Makefile.sources
 
-LOCAL_MODULE := libdrm_amdgpu
+LOCAL_MODULE := libvmidrm_amdgpu
 
-LOCAL_SHARED_LIBRARIES := libdrm
+LOCAL_SHARED_LIBRARIES := libvmidrm
 
 LOCAL_SRC_FILES := $(LIBDRM_AMDGPU_FILES)
 

@@ -41,7 +41,7 @@ if with_exynos
   libkms_include += include_directories('../exynos')
 endif
 
-libkms = shared_library(
+libvmikms = shared_library(
   'kms',
   [files_libkms, config_file],
   c_args : libdrm_c_args,
@@ -52,15 +52,15 @@ libkms = shared_library(
 )
 
 ext_libkms = declare_dependency(
-  link_with : [libdrm, libkms],
+  link_with : [libvmidrm, libvmikms],
   include_directories : [libkms_include],
 )
 
 install_headers('libkms.h', subdir : 'libkms')
 
 pkg.generate(
-  name : 'libkms',
-  libraries : libkms,
+  name : 'libvmikms',
+  libraries : libvmikms,
   subdirs : ['libkms'],
   version : '1.0.0',
   requires_private : 'libdrm',
@@ -71,5 +71,5 @@ test(
   'kms-symbol-check',
   find_program('kms-symbol-check'),
   env : env_test,
-  args : libkms,
+  args : libvmikms,
 )

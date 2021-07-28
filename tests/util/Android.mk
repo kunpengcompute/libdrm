@@ -26,9 +26,9 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 include $(LOCAL_PATH)/Makefile.sources
 
-LOCAL_MODULE := libdrm_util
+LOCAL_MODULE := libvmidrm_util
 
-LOCAL_SHARED_LIBRARIES := libdrm
+LOCAL_SHARED_LIBRARIES := libvmidrm
 
 LOCAL_SRC_FILES := $(UTIL_FILES)
 

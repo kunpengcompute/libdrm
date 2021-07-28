@@ -33,7 +33,7 @@ AM_CFLAGS = \
 	$(VALGRIND_CFLAGS) \
 	-I$(top_srcdir)/include/drm
 
-libdrm_intel_la_LTLIBRARIES = libdrm_intel.la
+libdrm_intel_la_LTLIBRARIES = libvmidrm_intel.la
 libdrm_intel_ladir = $(libdir)
 libdrm_intel_la_LDFLAGS = -version-number 1:0:0 -no-undefined
 libdrm_intel_la_LIBADD = ../libdrm.la \
@@ -70,6 +70,6 @@ EXTRA_DIST = \
 	tests/test-batch.sh \
 	$(TESTS)
 
-test_decode_LDADD = libdrm_intel.la ../libdrm.la
+test_decode_LDADD = libvmidrm_intel.la ../libvmidrm.la
 
-pkgconfig_DATA = libdrm_intel.pc
+pkgconfig_DATA = libvmidrm_intel.pc

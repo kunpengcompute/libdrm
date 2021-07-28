@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-libdrm_tegra = shared_library(
+libvmidrm_tegra = shared_library(
   'drm_tegra',
   [files('tegra.c'), config_file],
   include_directories : [inc_root, inc_drm],
@@ -30,15 +30,15 @@ libdrm_tegra = shared_library(
 )
 
 ext_libdrm_tegra = declare_dependency(
-  link_with : [libdrm, libdrm_tegra],
+  link_with : [libvmidrm, libvmidrm_tegra],
   include_directories : [inc_drm, include_directories('.')],
 )
 
 install_headers('tegra.h', subdir : 'libdrm')
 
 pkg.generate(
-  name : 'libdrm_tegra',
-  libraries : libdrm_tegra,
+  name : 'libvmidrm_tegra',
+  libraries : libvmidrm_tegra,
   subdirs : ['.', 'libdrm'],
   version : meson.project_version(),
   requires_private : 'libdrm',
@@ -49,5 +49,5 @@ test(
   'tegra-symbol-check',
   find_program('tegra-symbol-check'),
   env : env_test,
-  args : libdrm_tegra,
+  args : libvmidrm_tegra,
 )
